@@ -165,6 +165,10 @@ class Runner(object):
             .. note::
                 ``hide=True`` will override ``echo=True`` if both are given.
 
+        :param bool dry:
+            Prints the command string to local stdout instead of executing it.
+            Default: ``False``.
+
         :param dict env:
             By default, subprocesses recieve a copy of Invoke's own environment
             (i.e. ``os.environ``). Supply a dict here to update that child
