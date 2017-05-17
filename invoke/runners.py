@@ -169,6 +169,10 @@ class Runner(object):
             Prints the command string to local stdout instead of executing it.
             Default: ``False``.
 
+        :param bool ignore_dry:
+            Ignore dry settings.
+            Default: ``False``.
+
         :param dict env:
             By default, subprocesses recieve a copy of Invoke's own environment
             (i.e. ``os.environ``). Supply a dict here to update that child
@@ -431,6 +435,9 @@ class Runner(object):
         # Then normalize 'hide' from one of the various valid input values,
         # into a stream-names tuple.
         opts['hide'] = normalize_hide(opts['hide'])
+        # Ignore 'dry' settings?
+        if opts['ignore_dry'] is True:
+            opts['dry'] = False
         # Set 'echo' on dry-run.
         if opts['dry'] is True:
             opts['echo'] = True

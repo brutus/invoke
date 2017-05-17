@@ -77,6 +77,7 @@ class Config_(IntegrationSpec):
                     'run': {
                         'echo': False,
                         'dry': False,
+                        'ignore_dry': False,
                         'echo_stdin': None,
                         'encoding': None,
                         'env': {},

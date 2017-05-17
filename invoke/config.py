@@ -449,6 +449,7 @@ class Config(DataProxy):
                 'replace_env': False,
                 'echo': False,
                 'dry': False,
+                'ignore_dry': False,
                 'encoding': None,
                 'out_stream': None,
                 'err_stream': None,
