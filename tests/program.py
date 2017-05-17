@@ -378,6 +378,7 @@ Core options:
   --write-pyc                      Enable creation of .pyc files.
   -c STRING, --collection=STRING   Specify collection name to load.
   -d, --debug                      Enable debug output.
+  -D, --dry                        Echo commands instead of running.
   -e, --echo                       Echo executed commands before running.
   -f STRING, --config=STRING       Runtime configuration file to use.
   -h [STRING], --help[=STRING]     Show core or per-task help and exit.

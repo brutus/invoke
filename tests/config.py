@@ -76,6 +76,7 @@ class Config_(IntegrationSpec):
                 Config.global_defaults(), {
                     'run': {
                         'echo': False,
+                        'dry': False,
                         'echo_stdin': None,
                         'encoding': None,
                         'env': {},

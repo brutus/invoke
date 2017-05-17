@@ -269,6 +269,19 @@ class Runner(object):
         # Echo running command
         if opts['echo']:
             print("\033[1;37m{0}\033[0m".format(command))
+        # If dry-run, stop here
+        if opts['dry']:
+            result = self.generate_result(
+                command=command,
+                shell=shell,
+                env=env,
+                stdout='',
+                stderr='',
+                exited=0,
+                pty=self.using_pty,
+                hide=opts['hide'],
+            )
+            return result
         # Start executing the actual command (runs in background)
         self.start(command, shell, env)
         # Arrive at final encoding if neither config nor kwargs had one
@@ -414,6 +427,9 @@ class Runner(object):
         # Then normalize 'hide' from one of the various valid input values,
         # into a stream-names tuple.
         opts['hide'] = normalize_hide(opts['hide'])
+        # Set 'echo' on dry-run.
+        if opts['dry'] is True:
+            opts['echo'] = True
         # Derive stream objects
         out_stream = opts['out_stream']
         if out_stream is None:
