@@ -339,7 +339,7 @@ class Context(DataProxy):
             Space characters will be escaped automatically to make dealing with
             such directory names easier.
         """
-        self.command_cwds.append(path)
+        self.command_cwds.append(str(path))
         yield
         self.command_cwds.pop()
 
